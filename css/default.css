@@ -1,0 +1,316 @@
+html
+{
+	background: url("../img/background.jpg") repeat-x fixed 0 0 #000;
+}
+
+body.container
+{
+	margin:30px auto;
+	padding: 0;
+	max-width: 800px;
+	border: 1px solid silver;
+	background-color: #003b1b;
+	color: #d5d4d4;
+    font-family: Helvetica, Arial, sans-serif;
+    border-radius: 20px;
+    opacity:0.95;
+    font-family: "Trebuche MS", Arial, Verdana;
+    font-size:16px;
+}
+
+a
+{
+    color: #279d5e;
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+h1
+{
+	border-bottom: 1px solid #326248;
+	padding-bottom: 3px;
+}
+
+nav
+{
+	background-color: #002612;
+	max-width: 830px;
+	height: auto;
+	margin: 0;
+	padding: 5px 10px 0 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	display: block;
+	font-family: Arial,sans-serif;
+	font-weight: bold;
+}
+
+nav ul
+{
+	list-style: none;
+	display: inline-block;
+	margin:0;
+	padding:0;
+	max-width: 100%;
+}
+
+nav ul li
+{
+	float: left;
+	display: inline-block;
+	margin:0 0px;
+}
+
+header
+{
+	text-align: center;
+}
+
+#content
+{
+	display: inline-block;
+	text-align: justify;
+	height: auto;
+	max-width: 100%;
+	padding: 30px 20px;
+	font-size:16px;
+}
+
+h3, h4
+{
+	text-align: center;
+	margin-bottom:30px;
+	font-style: italic;
+}
+
+body footer
+{
+	display:block;
+	max-width: 798px;
+	height: auto;
+	color: #279d5e;
+	text-align: center;
+	background-color: #002612;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding:10px 0;
+}
+
+.clear
+{
+	clear:both;
+	display: none;
+}
+
+#homeImg
+{
+	margin:0 auto 15px auto;
+	max-width: 100%;
+	border-radius: 20px;
+}
+
+.profile
+{
+	display: inline-block;
+	padding:0;
+	margin:0 0 20px 0;
+	float:left;
+	max-width: 790px;
+}
+
+.profile a
+{
+	max-width:575px;
+	margin-bottom:20px;
+	font-size:18px;
+}
+
+.profile p
+{
+	font-size:16.5px;
+}
+
+.profile img, .comment img
+{
+	height: 110px;
+	max-width: 110px;
+	float: left;
+	margin:5px 20px 5px 15px;
+	display: inline;
+	opacity: 1;
+	border-radius: 80px;
+}
+
+.comment
+{
+	margin-bottom:20px;
+	border:1px solid #003b2b;
+	background-color:#002b1b;
+	border-radius:20px;
+	padding:10px;
+	min-height:140px;
+}
+
+.comment a
+{
+	font-size:19px;
+}
+
+.comment blockquote
+{
+	font-size:21px;
+	font-style: italic;
+	border:0;
+	margin:0;
+	padding:10px 0 0 0;
+}
+
+.target
+{
+	cursor: crosshair;
+}
+
+.profile
+{
+	max-width: 100%;
+	min-width: 100%;
+}
+
+.profile a
+{
+	margin-top:20px;
+	max-width: 100%;
+	min-width: 100%;
+	margin-bottom:10px
+}
+
+.profile div
+{
+	max-width: 580px;
+	display: block;
+}
+
+.profile p
+{
+	padding: 2px 0;
+	font-style: italic;
+}
+
+#html_validator
+{
+	background-image: url("../img/valid_html5.png");
+	background-repeat: no-repeat;
+  	text-indent: -99999999px;
+  	width: 45px;
+  	height: 16px;
+  	display: inline-block;
+}
+
+#css_validator
+{
+	background-image: url("../img/valid_css.gif");
+	background-repeat: no-repeat;
+  	text-indent: -99999999px;
+	width: 45px;
+  	height: 16px;
+  	display: inline-block;
+}
+
+#license
+{
+	background-image: url("../img/by-sa.png");
+	background-repeat: no-repeat;
+  	text-indent: -99999999px;
+	width: 45px;
+  	height: 16px;
+  	display: inline-block;
+}
+
+#html_validator, #css_validator, #license
+{
+	border-radius: 3.5px;
+}
+
+.friends
+{
+	max-width: 100%;
+	margin:20px auto;
+	padding: 10px;
+	text-align: center;
+}
+
+.friend
+{
+	max-width: 160px;
+	height: 160px;
+	margin:5px 10px;
+}
+
+.charges
+{
+    margin-left: 120px;
+    padding:5px 0;
+}
+
+.wantedheader
+{
+    text-align: center;
+    font-size: 30px;
+}
+
+.left
+{
+	float:left;
+	margin-left:25px;
+}
+
+.right
+{
+	float:right;
+	margin-right:25px;
+}
+
+.authors
+{
+	text-align: right;
+	min-width: 100%;
+	max-width: 100%;
+	margin-bottom: 30px;
+}
+
+#mvr
+{
+	max-width:780px;
+	text-align:center;
+}
+
+.img-responsive
+{
+	 display: block;
+	 height: auto;
+	 max-width: 100%;
+}
+
+.blueberry h3
+{
+	margin:40px auto 30px auto;
+	border-bottom: 1px dashed #c0c0c0;
+	padding-bottom: 4px;
+	color:#b0b0b0;
+}
+
+.blueberry h3:first-child
+{
+	margin-top:10px;
+}
+
+.blueberry p strong
+{
+	color:#a0a0a0;
+	font-weight:bold;
+}

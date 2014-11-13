@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /js/*
+Disallow: /css/*
+Disallow: /fonts/*
+Disallow: /up*
+
+Sitemap: http://softcasinos.com/sitemap.xml
