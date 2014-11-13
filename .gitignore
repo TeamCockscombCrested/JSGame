@@ -1,0 +1,7 @@
+/nbproject
+.idea
+.settings
+.directory
+.DS_Store
+Thumbs.db
+*git.sh
