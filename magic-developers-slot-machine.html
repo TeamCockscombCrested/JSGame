@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Magic Developer's Slot Machine</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="main-js.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Magic Developer's Slot Machine</h1>
+        <p>Game description la la la la la </p>
+    </header>
+    <section class="user-info">
+        <label for="player-name" class="info-label">Please, enter your name: </label>
+        <input type="text" id="player-name" tabindex="1" class="info-input"/>
+        <br/>
+        <label for="work-time" class="info-label">Enter how long you have been studying programming (months):</label>
+        <input type="text" id="work-time" tabindex="2" class="info-input"/>
+        <br/>
+        <label for="work-time" class="info-label"></label>
+        <input type="button" id="save-name" value="Save" tabindex="3"/>
+    </section>
+    <section class="slot-section">
+        <canvas id="slot-machine" width="400" height="400">Your browser does not support canvas.</canvas>
+        <input type="button" id="start-button" value="Let it Roll!"/>
+    </section>
+
+</body>
+</html>
