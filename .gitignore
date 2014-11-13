@@ -1,4 +1,6 @@
 /nbproject
+.settings
+.settings/
 .idea
 .idea/
 .settings
