@@ -16,6 +16,17 @@ require_once("header.php");
 
 		<!-- Основно съдържание на страницата -->
 		<div id="content" class="container">
-			<div>Съдържание..</div>
+			<!-- start game -->
+			<div id="game">
+				<div id="info">
+				</div>
+				
+				<div id="panel">
+				</div>
+				
+				<div id="dashboard">
+				</div>
+			</div>
+			<!-- end game -->
 		</div>
 <?php require_once("footer.php"); ?>

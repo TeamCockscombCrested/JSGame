@@ -1,0 +1,23 @@
+#game{
+	border: 1px solid black;
+	margin: 2px;
+	
+}
+
+#info{
+	border: 1px solid black;
+	margin: 2px;
+	height: 10px;
+}
+
+#panel{
+	border: 1px solid black;
+	margin: 2px;
+	height: 10px;
+}
+
+#dashboard{
+	border: 1px solid black;
+	margin: 2px;
+	height: 10px;
+}

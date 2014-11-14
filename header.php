@@ -18,6 +18,7 @@ if (!isset($keywords)) $keywords = "softuni,софтуни,ротативка,и
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/default.css?"/>
+		<link rel="stylesheet" type="text/css" href="/css/game.css"/>
 	</head>
 
 	<body class="container">
