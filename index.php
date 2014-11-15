@@ -16,7 +16,9 @@ require_once("header.php");
 
 		<!-- Основно съдържание на страницата -->
 		<div id="content" class="container">
+			
 			<!-- start game -->
+			<script src="js/game.js"></script>
 			<div id="game">
 				<div id="info">
 				</div>
