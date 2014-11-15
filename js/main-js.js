@@ -2,6 +2,8 @@
  * Created by Strahil on 11/13/14.
  */
 'use strict';
+//an array holding the results of each rotation of the slot machine:
+var results = [];
 //an array holding the names of the langs:
 var languages = ['Java', 'CSharp', 'Ruby', 'JavaScript', 'PHP', 'HTML', 'Python', 'Swift', 'SQL'];
 //a dictionary holding the background colors of each lang element to be drawn:
@@ -16,7 +18,7 @@ var backgroundColors = {
     Swift: 'RGB(252,73,55)',
     SQL: 'RGB(109,162,160)'
 };
-//a dictionary holding the text colors of each lang element to be drawn:
+//A dictionary holding the text colors of each lang element to be drawn:
 var foregroundColors = {
     Java: 'RGB(244,244,244)',
     CSharp: 'RGB(244,244,244)',
@@ -33,7 +35,10 @@ var languageWidth = 77;
 var languageHeight = 35;
 var fontSize = 12;
 var canvasHeight = 200;
+var canvasWidth = 100;
 var languageMargin = 15;
+var topSeparatorPlace = (canvasHeight / 2) - (languageHeight / 2) - (languageMargin / 2);
+var bottomSeparatorPlace = (canvasHeight / 2) + (languageHeight / 2) + (languageMargin / 2);
 
 //an Object we will use during the animation. It holds the info needed for drawing - name of the lang and its location (top)
 var Language = function (name, top) {
@@ -63,60 +68,178 @@ var section3 = new Languages();
 
 //This function is to do the initial draw of the languages in the slot machine.
 //It is called when the page finishes loading by a script located in the end of <body>
-function initializeSlotMachine () {
-    var myCanvas = document.getElementById("slot-machine");
-    var ctx = myCanvas.getContext("2d");
+function initializeSlotMachine() {
+    //init first canvas / section:
+    var section1Canvas = document.getElementById("section1");
+    var ctx1 = section1Canvas.getContext("2d");
     for (var i in section1) {
-        drawLanguage(10, section1[i].Top, section1[i].Name);
-        //console.log(section1[i].Top);
+        drawLanguage(ctx1, 10, section1[i].Top, section1[i].Name);
     }
+    ctx1.strokeStyle = 'red';
+    ctx1.moveTo(0, topSeparatorPlace);
+    ctx1.lineTo(canvasWidth, topSeparatorPlace);
+    ctx1.moveTo(0, bottomSeparatorPlace);
+    ctx1.lineTo(canvasWidth, bottomSeparatorPlace);
+    ctx1.stroke();
+
+    //init second canvas / section:
+    var section2Canvas = document.getElementById("section2");
+    var ctx2 = section2Canvas.getContext("2d");
+    for (var j in section2) {
+        drawLanguage(ctx2, 10, section2[j].Top, section2[j].Name);
+    }
+    ctx2.strokeStyle = 'red';
+    ctx2.moveTo(0, topSeparatorPlace);
+    ctx2.lineTo(canvasWidth, topSeparatorPlace);
+    ctx2.moveTo(0, bottomSeparatorPlace);
+    ctx2.lineTo(canvasWidth, bottomSeparatorPlace);
+    ctx2.stroke();
+
+    //init third canvas / section:
+    var section3Canvas = document.getElementById("section3");
+    var ctx3 = section3Canvas.getContext("2d");
+    for (var k in section3) {
+        drawLanguage(ctx3, 10, section3[k].Top, section3[k].Name);
+    }
+    ctx3.strokeStyle = 'red';
+    ctx3.moveTo(0, topSeparatorPlace);
+    ctx3.lineTo(canvasWidth, topSeparatorPlace);
+    ctx3.moveTo(0, bottomSeparatorPlace);
+    ctx3.lineTo(canvasWidth, bottomSeparatorPlace);
+    ctx3.stroke();
 }
 
 //this is the main function. It is called when the player press Start button
 //It manages the whole animation of the three sections of the slot machine
 //the 'frame' function is a nested function that is called at every animation interval. It does the actual drawing
 //of languages
-function spinSlotMachine () {
+function spinSlotMachine() {
     var slot1TimeLimit = randomNumber(2);
     var slot1CurrentTime = 0;
-    var myCanvas = document.getElementById("slot-machine");
-    var ctx = myCanvas.getContext("2d");
+    var slot2TimeLimit = slot1TimeLimit + randomNumber(2);
+    var slot2CurrentTime = 0;
+    var slot3TimeLimit = slot2TimeLimit + randomNumber(2);
+    var slot3CurrentTime = 0;
+
+    console.log(slot1TimeLimit + '/' + slot2TimeLimit + '/' + slot3TimeLimit);
+
+    var section1Canvas = document.getElementById("section1");
+    var ctx1 = section1Canvas.getContext("2d");
+
+    var section2Canvas = document.getElementById("section2");
+    var ctx2 = section2Canvas.getContext("2d");
+
+    var section3Canvas = document.getElementById("section3");
+    var ctx3 = section3Canvas.getContext("2d");
 
     function frame() {
+        drawSeparators(ctx1);
+        drawSeparators(ctx2);
+        drawSeparators(ctx3);
+
         slot1CurrentTime += 0.01;
-        if (slot1CurrentTime >= slot1TimeLimit) {
+        slot2CurrentTime += 0.01;
+        slot3CurrentTime += 0.01;
+
+        if (slot3CurrentTime >= slot3TimeLimit) {
             clearInterval(id);
+            getTheResults();
+            displayResults();
         } else {
-            ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-            for (var i in section1) {
-                if (section1[i].Bottom() >= 0) {
-                    drawLanguage(10, section1[i].Top, section1[i].Name);
-                    section1[i].Top -= (languageMargin + languageHeight);
-                    //console.log(section1[i].Name + ': ' + section1[i].Top);
+            if (slot1CurrentTime < slot1TimeLimit) {
+                ctx1.clearRect(0, 0, section1Canvas.width, section1Canvas.height);
+                for (var j = 0; j < section1.length; j++) {
+                    if (section1[j].Bottom() > 0) {
+                        drawLanguage(ctx1, 10, section1[j].Top, section1[j].Name);
+                        section1[j].Top -= (languageMargin + languageHeight);
+                    } else {
+                        section1[j].Top = ((section1.length - 2) * (languageHeight + languageMargin)) - languageMargin;
+                        //section1[j].Top = canvasHeight - languageMargin;
+                    }
+                }
+            }
+
+            if (slot2CurrentTime < slot2TimeLimit) {
+                ctx2.clearRect(0, 0, section2Canvas.width, section2Canvas.height);
+                for (var j = 0; j < section2.length; j++) {
+                    if (section2[j].Bottom() > 0) {
+                        drawLanguage(ctx2, 10, section2[j].Top, section2[j].Name);
+                        section2[j].Top -= (languageMargin + languageHeight);
+                    } else {
+                        section2[j].Top = ((section2.length - 2) * (languageHeight + languageMargin)) - languageMargin;
+                        //section2[j].Top = canvasHeight - languageMargin;
+                    }
+                }
+            }
+
+            ctx3.clearRect(0, 0, section3Canvas.width, section3Canvas.height);
+            for (var j = 0; j < section3.length; j++) {
+                if (section3[j].Bottom() > 0) {
+                    drawLanguage(ctx3, 10, section3[j].Top, section3[j].Name);
+                    section3[j].Top -= (languageMargin + languageHeight);
                 } else {
-                    section1[i].Top = canvasHeight - languageMargin;
-                    //console.log('To back - ' + section1[i].Name + ': ' + section1[i].Top);
+                    section3[j].Top = ((section3.length - 2) * (languageHeight + languageMargin)) - languageMargin;
+                    //section3[j].Top = canvasHeight - languageMargin;
                 }
             }
         }
     }
 
     var id = setInterval(frame, 10) // draw every 10ms
+}
 
+//A utility function to draw the red lines in the middle of the slot machine:
+function drawSeparators(context) {
+    context.strokeStyle = 'red';
+    context.moveTo(0, topSeparatorPlace);
+    context.lineTo(canvasWidth, topSeparatorPlace);
+    context.moveTo(0, bottomSeparatorPlace);
+    context.lineTo(canvasWidth, bottomSeparatorPlace);
+    context.stroke();
+}
+
+//A utility function that finds the languages that are in the middle after each roll
+//of the slot machine:
+function getTheResults() {
+    for (var i in section1) {
+        //console.log(section1[i].Name + ': ' + section1[i].Top + ' / ' + section1[i].Bottom());
+        if (section1[i].Top + languageHeight + languageMargin < (canvasHeight / 2) && section1[i].Bottom() + languageHeight + languageMargin > (canvasHeight / 2)) {
+            results[0] = section1[i].Name;
+            //console.log('Hit= ' + section1[i].Name);
+        }
+    }
+    for (var i in section2) {
+        if (section2[i].Top + languageHeight + languageMargin < (canvasHeight / 2) && section2[i].Bottom() + languageHeight + languageMargin > (canvasHeight / 2)) {
+            results[1] = section2[i].Name;
+        }
+    }
+    for (var i in section3) {
+        if (section3[i].Top + languageHeight + languageMargin < (canvasHeight / 2) && section3[i].Bottom() + languageHeight + languageMargin > (canvasHeight / 2)) {
+            results[2] = section3[i].Name;
+        }
+    }
+}
+
+//A utility function that display the results of each roll of the slot machine:
+function displayResults() {
+    var resultsElement = document.getElementById('results');
+    var output = "Results: ";
+    for (var i in results) {
+        output += results[i] + ' ';
+    }
+    resultsElement.innerHTML = output;
 }
 
 //this is the function that is called every time the game needs to draw a language at a specific place in the slot machine
-function drawLanguage(left, top, languageName) {
-    var myCanvas = document.getElementById("slot-machine");
-    var ctx = myCanvas.getContext("2d");
+function drawLanguage(context, left, top, languageName) {
     var fillColor = backgroundColors[languageName];
     var textColor = foregroundColors[languageName];
-    ctx.fillStyle = fillColor;
-    roundedRect(ctx, left, top, languageWidth, languageHeight, 5);
-    ctx.font = fontSize + 'px ' + 'Arial';
-    var textWidth = ctx.measureText(languageName).width;
-    ctx.fillStyle = textColor;
-    ctx.fillText(languageName, left + (languageWidth - textWidth) / 2, top + languageHeight - (languageHeight - fontSize) / 2);
+    context.fillStyle = fillColor;
+    roundedRect(context, left, top, languageWidth, languageHeight, 5);
+    context.font = fontSize + 'px ' + 'Arial';
+    var textWidth = context.measureText(languageName).width;
+    context.fillStyle = textColor;
+    context.fillText(languageName, left + (languageWidth - textWidth) / 2, top + languageHeight - (languageHeight - fontSize) / 2);
 }
 
 //this is function is us to generate a random number between 0 and max. This number
