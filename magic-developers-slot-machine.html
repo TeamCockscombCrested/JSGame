@@ -3,30 +3,35 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Magic Developer's Slot Machine</title>
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/default.css"/>
     <script src="js/main-js.js"></script>
 </head>
 <body>
     <header>
         <h1>Magic Developer's Slot Machine</h1>
-        <p>Game description la la la la la </p>
+        <p>Game description</p>
     </header>
-    <section class="user-info">
-        <label for="player-name" class="info-label">Please, enter your name: </label>
-        <input type="text" id="player-name" tabindex="1" class="info-input"/>
-        <br/>
-        <label for="work-time" class="info-label">Enter how long you have been studying programming (months):</label>
-        <input type="text" id="work-time" tabindex="2" class="info-input"/>
-        <br/>
-        <label for="work-time" class="info-label"></label>
-        <input type="button" id="save-name" value="Save" tabindex="3"/>
-    </section>
+
     <section class="slot-section">
-        <canvas id="slot-machine" width="100" height="200">Your browser does not support canvas.</canvas>
+    <div id="slots">
+        <canvas id="slot-machine1" width="100" height="200">Your browser does not support canvas.</canvas>
+        <canvas id="slot-machine2" width="100" height="200">Your browser does not support canvas.</canvas>
+        <canvas id="slot-machine3" width="100" height="200">Your browser does not support canvas.</canvas>
+        <canvas id="slot-machine4" width="100" height="200">Your browser does not support canvas.</canvas>
+    </div>
+    <div id="bet">
+        Bet: <select>
+            <option value="php">PHP</option>
+            <option value="java">JAVA</option>
+            <option value="javascript">JAVASCRIPT</option>
+            <option value="csharp">C#</option>
+            <option value="html">HTML</option>
+        </select>
+    </div>
         <input type="button" id="start-button" value="Let it Roll!" onclick="spinSlotMachine()"/>
     </section>
     <script>
-        initializeSlotMachine();
+        LoadGame();
     </script>
 </body>
 </html>
