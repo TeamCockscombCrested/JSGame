@@ -3,31 +3,25 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Magic Developer's Slot Machine</title>
+    <link rel="stylesheet" href="css/default.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
     <script src="js/main-js.js"></script>
 </head>
 <body>
     <header>
-        <h1>Magic Developer's Slot Machine</h1>
-        <p>Game description la la la la la </p>
+        <h3>Magic Developer's Slot Machine</h3>
     </header>
-    <section class="user-info">
-        <label for="player-name" class="info-label">Please, enter your name: </label>
-        <input type="text" id="player-name" tabindex="1" class="info-input"/>
-        <br/>
-        <label for="work-time" class="info-label">Enter how long you have been studying programming (months):</label>
-        <input type="text" id="work-time" tabindex="2" class="info-input"/>
-        <br/>
-        <label for="work-time" class="info-label"></label>
-        <input type="button" id="save-name" value="Save" tabindex="3"/>
-    </section>
+
     <section class="slot-section">
-        <p id="results">Results:</p>
-        <canvas id="section1" class="slot-machine" width="100" height="200">Your browser does not support canvas.</canvas>
-        <canvas id="section2" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
-        <canvas id="section3" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
+        <div id="results"><strong>Results:</strong> </div>
+        <div id="slots">
+            <canvas id="section1" class="slot-machine" width="100" height="200">Your browser does not support canvas.</canvas>
+            <canvas id="section2" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
+            <canvas id="section3" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
+        </div>
         <input type="button" id="start-button" value="Let it Roll!" onclick="spinSlotMachine()"/>
     </section>
+
     <script>
         initializeSlotMachine();
     </script>

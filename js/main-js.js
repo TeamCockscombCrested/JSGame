@@ -223,10 +223,24 @@ function getTheResults() {
 //A utility function that display the results of each roll of the slot machine:
 function displayResults() {
     var resultsElement = document.getElementById('results');
-    var output = "Results: ";
-    for (var i in results) {
-        output += results[i] + ' ';
+    var output = "<strong>Results:</strong> ";
+
+    if (results[0] == results[1] == results[2])
+    {
+        output += '<b data-result="3" data-lang="'+results[0]+'" > 3x' + results[0] + '</b> ';
     }
+        else if (results[0] == results[1] || results[0] == results[2])
+        {
+            output += '<b data-result="2" data-lang="'+results[0]+'"> 2x' + results[0] + '</b> ';
+        } else if (results[1] == results[2])
+            {
+                output += '<b data-result="2" data-lang="'+results[1]+'"> 2x' + results[1] + '</b> ';
+            }
+                else
+                {
+                    output += '<b data-result="0" data-lang="0" > NO WIN!</b> ';
+                }
+
     resultsElement.innerHTML = output;
 }
 
