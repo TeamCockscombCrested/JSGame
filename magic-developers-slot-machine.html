@@ -13,13 +13,15 @@
     </header>
 
     <section class="slot-section">
-        <div id="results"><strong>Results:</strong> </div>
         <div id="slots">
             <canvas id="section1" class="slot-machine" width="100" height="200">Your browser does not support canvas.</canvas>
             <canvas id="section2" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
             <canvas id="section3" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
         </div>
-        <input type="button" id="start-button" value="Let it Roll!" onclick="spinSlotMachine()"/>
+        <div id="score-box">
+            <input type="button" id="start-button" value="Let it Roll!" onclick="spinSlotMachine()"/>
+            <input id="score" type="text" value="0" name="score" readonly="">
+        </div>
     </section>
 
     <script>

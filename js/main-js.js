@@ -222,26 +222,26 @@ function getTheResults() {
 
 //A utility function that display the results of each roll of the slot machine:
 function displayResults() {
-    var resultsElement = document.getElementById('results');
-    var output = "<strong>Results:</strong> ";
+    var resultsElement = document.getElementById('score');
+    var output = parseInt(resultsElement.value);
 
     if (results[0] == results[1] == results[2])
     {
-        output += '<b data-result="3" data-lang="'+results[0]+'" > 3x' + results[0] + '</b> ';
+        output += 3;
     }
         else if (results[0] == results[1] || results[0] == results[2])
         {
-            output += '<b data-result="2" data-lang="'+results[0]+'"> 2x' + results[0] + '</b> ';
+            output += 2;
         } else if (results[1] == results[2])
             {
-                output += '<b data-result="2" data-lang="'+results[1]+'"> 2x' + results[1] + '</b> ';
+                output += 2;
             }
                 else
                 {
-                    output += '<b data-result="0" data-lang="0" > NO WIN!</b> ';
+                    //output += 0;
                 }
 
-    resultsElement.innerHTML = output;
+    resultsElement.value = output;
 }
 
 //this is the function that is called every time the game needs to draw a language at a specific place in the slot machine

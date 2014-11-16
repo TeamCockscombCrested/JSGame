@@ -1,18 +1,21 @@
 body
 {
-
+	margin:0 auto;
+	width: 480px;
 }
 
 header
 {
+	width: 430px;
 	margin-left:20px;
+	text-align: center;
 }
 
 #slots
 {
 	margin:10px 0 10px 20px;
-	border: 5px solid #DDD;
-	width:400px;
+	border: 5px solid #555;
+	width:404px;
 	padding: 10px;
 }
 
@@ -25,16 +28,31 @@ canvas
 {
 	margin:10px 0 10px 0px;
 	height: 250px;
-	border:2px solid #DDD;
+	border:3px solid #555;
 }
 
 #start-button
 {
 	margin:10px 0 0 20px;
-	display: block;
+	display: inline-block;
 }
 
 #results
 {
 	margin-left:20px;
+}
+
+#score
+{
+	display:inline-block;
+	width: 100px;
+	margin-left:2px;
+}
+
+#score-box
+{
+	display: block;
+	width: 450px;
+	height: 40px;
+	text-align: center;
 }
