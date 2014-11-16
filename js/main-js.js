@@ -240,7 +240,7 @@ function displayResults() {
             }
                 else
                 {
-                    if (output > 1)
+                    if (output > 0)
                     {
                         output -= 1;
                     }
