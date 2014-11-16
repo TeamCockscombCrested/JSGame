@@ -14,7 +14,7 @@ header
 #slots
 {
 	margin:10px 0 10px 20px;
-	border: 5px solid #555;
+	border: 5px solid #111;
 	width:404px;
 	padding: 10px;
 }
@@ -28,7 +28,7 @@ canvas
 {
 	margin:10px 0 10px 0px;
 	height: 250px;
-	border:3px solid #555;
+	border:3px solid #111;
 }
 
 #start-button
