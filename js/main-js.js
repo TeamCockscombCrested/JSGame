@@ -222,23 +222,32 @@ function getTheResults() {
 
 //A utility function that display the results of each roll of the slot machine:
 function displayResults() {
+    var startButton = document.getElementById('start-button');
     var resultsElement = document.getElementById('score');
     var output = parseInt(resultsElement.value);
 
     if (results[0] == results[1] == results[2])
     {
-        output += 3;
+        output += 20;
     }
         else if (results[0] == results[1] || results[0] == results[2])
         {
-            output += 2;
+            output += 5;
         } else if (results[1] == results[2])
             {
-                output += 2;
+                output += 5;
             }
                 else
                 {
-                    //output += 0;
+                    if (output > 1)
+                    {
+                        output -= 1;
+                    }
+                    else
+                    {
+                        // ако резултата на играча е 0, не може да играе
+                        startButton.disabled = true;
+                    }
                 }
 
     resultsElement.value = output;
