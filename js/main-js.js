@@ -223,7 +223,6 @@ function getTheResults() {
 //A utility function that display the results of each roll of the slot machine:
 function displayResults() {
     var startButton = document.getElementById('start-button');
-    var startButton = document.getElementById('save-button');
     var resultsElement = document.getElementById('score');
     var output = parseInt(resultsElement.value);
 
@@ -248,7 +247,6 @@ function displayResults() {
                     {
                         // ако резултата на играча е 0, не може да играе
                         startButton.disabled = true;
-                        //saveButton.disabled = true;
                     }
                 }
 
