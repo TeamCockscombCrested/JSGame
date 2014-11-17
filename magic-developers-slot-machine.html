@@ -15,10 +15,21 @@
     <section class="slot-section">
         <div id="slots">
             <canvas id="section1" class="slot-machine" width="100" height="200">Your browser does not support canvas.</canvas>
-            <canvas id="section2" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
-            <canvas id="section3" width="100" class="slot-machine"height="200">Your browser does not support canvas.</canvas>
+            <canvas id="section2" width="100" class="slot-machine" height="200">Your browser does not support canvas.</canvas>
+            <canvas id="section3" width="100" class="slot-machine" height="200">Your browser does not support canvas.</canvas>
         </div>
         <div id="score-box">
+            <select id="langs">
+                <option value="JavaScript">JAVASCRIPT</option>
+                <option value="Python">PYTHON</option>
+                <option value="HTML">HTML</option>
+                <option value="Java">JAVA</option>
+                <option value="PHP">PHP</option>
+                <option value="Ruby">RUBY</option>
+                <option value="SQL">SQL</option>
+                <option value="Swift">SWIFT</option>
+                <option value="CSharp">CSHARP</option>
+            </select>
             <input type="button" id="start-button" value="Roll" onclick="spinSlotMachine()"/>
             <input id="score" type="text" value="5" name="score" readonly="">
             <input type="button" id="save-button" value="Save"/>

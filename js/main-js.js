@@ -225,17 +225,39 @@ function displayResults() {
     var startButton = document.getElementById('start-button');
     var resultsElement = document.getElementById('score');
     var output = parseInt(resultsElement.value);
+    var selectedLang = document.getElementById('langs').value;
 
     if (results[0] == results[1] == results[2])
     {
-        output += 20;
+        if(selectedLang == results[0])
+        {
+            output *= output;
+        }
+        else
+        {
+            output += 10;
+        }
     }
         else if (results[0] == results[1] || results[0] == results[2])
         {
-            output += 5;
-        } else if (results[1] == results[2])
+            if(selectedLang == results[0])
+            {
+                output += 15;
+            }
+            else
             {
                 output += 5;
+            }
+        } else if (results[1] == results[2])
+            {
+                if(selectedLang == results[1])
+                {
+                    output += 15;
+                }
+                else
+                {
+                    output += 5;
+                }
             }
                 else
                 {

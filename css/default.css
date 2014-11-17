@@ -33,7 +33,7 @@ canvas
 
 #start-button
 {
-	margin:10px 0 0 20px;
+	margin:10px 0 0 10px;
 	display: inline-block;
 }
 
@@ -55,4 +55,9 @@ canvas
 	width: 450px;
 	height: 40px;
 	text-align: center;
+}
+
+#langs
+{
+	margin-left:20px;
 }
