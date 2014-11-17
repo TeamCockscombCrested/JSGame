@@ -75,12 +75,7 @@ function initializeSlotMachine() {
     for (var i in section1) {
         drawLanguage(ctx1, 10, section1[i].Top, section1[i].Name);
     }
-    ctx1.strokeStyle = 'red';
-    ctx1.moveTo(0, topSeparatorPlace);
-    ctx1.lineTo(canvasWidth, topSeparatorPlace);
-    ctx1.moveTo(0, bottomSeparatorPlace);
-    ctx1.lineTo(canvasWidth, bottomSeparatorPlace);
-    ctx1.stroke();
+
 
     //init second canvas / section:
     var section2Canvas = document.getElementById("section2");
@@ -88,12 +83,7 @@ function initializeSlotMachine() {
     for (var j in section2) {
         drawLanguage(ctx2, 10, section2[j].Top, section2[j].Name);
     }
-    ctx2.strokeStyle = 'red';
-    ctx2.moveTo(0, topSeparatorPlace);
-    ctx2.lineTo(canvasWidth, topSeparatorPlace);
-    ctx2.moveTo(0, bottomSeparatorPlace);
-    ctx2.lineTo(canvasWidth, bottomSeparatorPlace);
-    ctx2.stroke();
+
 
     //init third canvas / section:
     var section3Canvas = document.getElementById("section3");
@@ -101,12 +91,11 @@ function initializeSlotMachine() {
     for (var k in section3) {
         drawLanguage(ctx3, 10, section3[k].Top, section3[k].Name);
     }
-    ctx3.strokeStyle = 'red';
-    ctx3.moveTo(0, topSeparatorPlace);
-    ctx3.lineTo(canvasWidth, topSeparatorPlace);
-    ctx3.moveTo(0, bottomSeparatorPlace);
-    ctx3.lineTo(canvasWidth, bottomSeparatorPlace);
-    ctx3.stroke();
+
+    drawSeparators(ctx1);
+    drawSeparators(ctx2);
+    drawSeparators(ctx3);
+
 }
 
 //this is the main function. It is called when the player press Start button
