@@ -252,6 +252,7 @@ function displayResults() {
                 }
 
     resultsElement.value = output;
+    document.cookie="unsaved=" + output +"; path=/";
 }
 
 //this is the function that is called every time the game needs to draw a language at a specific place in the slot machine
