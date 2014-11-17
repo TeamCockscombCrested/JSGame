@@ -239,12 +239,13 @@ function displayResults() {
             }
                 else
                 {
-                    if (output > 0)
+                    if (output > 1)
                     {
                         output -= 1;
                     }
                     else
                     {
+                        output -= 1;
                         // ако резултата на играча е 0, не може да играе
                         startButton.disabled = true;
                     }
