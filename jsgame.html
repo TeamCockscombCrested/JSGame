@@ -31,9 +31,10 @@
                 <option value="CSharp">CSHARP</option>
             </select>
             <input type="button" id="start-button" value="Завърти!" onclick="spinSlotMachine()"/>
-            <input id="score" type="text" value="5" name="score" readonly="">
-            <input type="button" id="save-button" value="Запази"/>
-            <input type="button" id="add-button" value="Добави точки"/>
+            <label for="score" class="score-label">Точки: </label>
+            <input id="score" type="text" value="5" name="score" readonly="" class="score-inputs">
+            <input type="button" id="save-button" value="Запази" class="score-inputs"/>
+            <input type="button" id="add-button" value="Добави точки" class="score-inputs"/>
         </div>
     </section>
 

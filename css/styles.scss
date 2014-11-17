@@ -2,10 +2,10 @@ body, canvas, h1, h2, h3, p, div, span, label, input {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
-  background-color: azure;
   font-family: Helvetica, Verdana, sans-serif;
   text-align: center;
   header {
@@ -15,6 +15,10 @@ body {
       margin-top: 15px;
       margin-bottom: 10px;
       color: tomato;
+    }
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.4em;
     }
     p {
       font-size: 0.9em;
@@ -57,19 +61,21 @@ body {
   }
 
   .slot-section {
-    width: 700px;
+    width: 500px;
     margin: 0 auto;
-    border: 1px solid tomato;
+    border: 1px solid #1b6a8b;
+    background-color: #c4e1e6;
+    border-radius: 15px;
     padding: 15px;
     text-align: center;
     #results {
       margin-bottom: 10px;
       margin-top: 10px;
-      color: tomato;
+      color: #1b6a8b;
     }
     .slot-machine {
       background: linear-gradient(#ffffff 30%, darkgrey 60%);;
-      border: 2px solid tomato;
+      border: 2px solid #1b6a8b;
       border-radius: 15px;
 
     }
@@ -77,15 +83,30 @@ body {
       display: block;
       margin: 20px auto;
       width: 50%;
-      border: 1px solid tomato;
       border-radius: 5px;
-      background-color: tomato;
+      border: 1px solid #1b6a8b;
+      background-color: #f40f2c;
       color: white;
       height: 25px;
+      font-size: 0.8em;
     }
     #start-button:hover {
       cursor: pointer;
-      border: 1px solid black;
+      border: 1px solid tomato;
+    }
+    .score-inputs {
+      width: 120px !important;
+      display: inline-block;
+      background-color: #1b6a8b;
+      border: 1px solid #1b6a8b;
+      border-radius: 5px;
+      padding: 3px;
+      color: white;
+      font-size: 0.8em;
+    }
+    .score-inputs:hover {
+      cursor: pointer;
+      border: 1px solid tomato;
     }
   }
 }

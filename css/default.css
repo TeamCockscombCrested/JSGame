@@ -14,8 +14,10 @@ header
 #slots
 {
 	margin:10px 0 10px 20px;
-	border: 5px solid #111;
-	width:404px;
+	border: 5px solid #1b6a8b;
+	border-radius: 15px;
+	background-color: #c4e1e6;
+	width:450px;
 	padding: 10px;
 }
 
