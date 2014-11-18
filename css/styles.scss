@@ -108,5 +108,15 @@ body {
       cursor: pointer;
       border: 1px solid tomato;
     }
+    #score {
+      background-color: orange;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 60px !important;
+      text-align: center;
+      font-size: 1.2em;
+    }
   }
 }
