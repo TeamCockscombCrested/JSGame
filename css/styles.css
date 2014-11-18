@@ -1,0 +1,100 @@
+body, canvas, h1, h2, h3, p, div, span, label, input {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+  text-align: center; }
+  body header {
+    margin: 0 auto; }
+    body header h1 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: tomato; }
+    body header h3 {
+      margin-bottom: 10px;
+      font-size: 1.4em; }
+    body header p {
+      font-size: 0.9em; }
+  body .user-info {
+    width: 50%;
+    margin: 20px auto;
+    padding: 5px;
+    text-align: left;
+    border: 1px solid tomato;
+    font-size: 0.9em; }
+    body .user-info .info-label {
+      width: 50%;
+      display: inline-block;
+      height: 25px;
+      margin-bottom: 5px;
+      float: left; }
+    body .user-info .info-input {
+      width: 50%;
+      display: inline-block;
+      height: 25px;
+      margin-bottom: 5px;
+      float: left;
+      padding: 3px; }
+    body .user-info #save-name {
+      width: 50%;
+      border: 1px solid tomato;
+      background-color: tomato;
+      color: white;
+      height: 25px; }
+    body .user-info #save-name:hover {
+      cursor: pointer;
+      border: 1px solid black; }
+  body .slot-section {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid #1b6a8b;
+    background-color: #c4e1e6;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center; }
+    body .slot-section #results {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      color: #1b6a8b; }
+    body .slot-section .slot-machine {
+      background: linear-gradient(#ffffff 30%, darkgrey 60%);
+      border: 2px solid #1b6a8b;
+      border-radius: 15px; }
+    body .slot-section #start-button {
+      display: block;
+      margin: 20px auto;
+      width: 50%;
+      border-radius: 5px;
+      border: 1px solid #1b6a8b;
+      background-color: #f40f2c;
+      color: white;
+      height: 25px;
+      font-size: 0.8em; }
+    body .slot-section #start-button:hover {
+      cursor: pointer;
+      border: 1px solid tomato; }
+    body .slot-section .score-inputs {
+      width: 120px !important;
+      display: inline-block;
+      background-color: #1b6a8b;
+      border: 1px solid #1b6a8b;
+      border-radius: 5px;
+      padding: 3px;
+      color: white;
+      font-size: 0.8em; }
+    body .slot-section .score-inputs:hover {
+      cursor: pointer;
+      border: 1px solid tomato; }
+    body .slot-section #score {
+      background-color: orange;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 60px !important;
+      text-align: center;
+      font-size: 1.2em; }
+
+/*# sourceMappingURL=styles.css.map */
