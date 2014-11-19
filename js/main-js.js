@@ -106,6 +106,9 @@ function initializeSlotMachine(gameMode)
         // сайта който зарежда играта сам да си ги сетне
         var resultsElement = document.getElementById('score');
         resultsElement.value = 0;
+
+        var startButton = document.getElementById('start-button');
+        startButton.disabled = true;
     }
 }
 
