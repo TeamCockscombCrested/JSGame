@@ -68,7 +68,10 @@ var section3 = new Languages();
 
 //This function is to do the initial draw of the languages in the slot machine.
 //It is called when the page finishes loading by a script located in the end of <body>
-function initializeSlotMachine() {
+// param gameMode options 'standart', 'demo'
+function initializeSlotMachine(gameMode)
+{
+    if (gameMode != 'standart') gameMode = 'demo';
     //init first canvas / section:
     var section1Canvas = document.getElementById("section1");
     var ctx1 = section1Canvas.getContext("2d");
@@ -96,6 +99,14 @@ function initializeSlotMachine() {
     drawSeparators(ctx2);
     drawSeparators(ctx3);
 
+    // demo mode
+    if (gameMode == 'standart')
+    {
+        // занули началната стойност на score
+        // сайта който зарежда играта сам да си ги сетне
+        var resultsElement = document.getElementById('score');
+        resultsElement.value = 0;
+    }
 }
 
 //this is the main function. It is called when the player press Start button
@@ -216,22 +227,26 @@ function displayResults() {
     var output = parseInt(resultsElement.value);
     var selectedLang = document.getElementById('langs').value;
 
+    // 3 еднакви резултата
     if (results[0] == results[1] == results[2])
     {
+        // избрания език е познат
         if(selectedLang == results[0])
         {
-            output *= output;
+            output += 100;
         }
         else
         {
-            output += 10;
+            output += 30;
         }
     }
+        // 2 еднакви резултата
         else if (results[0] == results[1] || results[0] == results[2])
         {
+            // избрания език е познат
             if(selectedLang == results[0])
             {
-                output += 15;
+                output += 50;
             }
             else
             {
@@ -241,7 +256,7 @@ function displayResults() {
             {
                 if(selectedLang == results[1])
                 {
-                    output += 15;
+                    output += 50;
                 }
                 else
                 {
@@ -250,13 +265,13 @@ function displayResults() {
             }
                 else
                 {
-                    if (output > 1)
+                    if (output > 3)
                     {
-                        output -= 1;
+                        output -= 3;
                     }
                     else
                     {
-                        output -= 1;
+                        output = 0;
                         // ако резултата на играча е 0, не може да играе
                         startButton.disabled = true;
                     }
