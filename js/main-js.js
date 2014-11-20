@@ -102,11 +102,11 @@ function initializeSlotMachine(gameMode)
     // demo mode
     if (gameMode == 'standart')
     {
-        // занули началната стойност на score
-        // сайта който зарежда играта сам да си ги сетне
+        // set default score value to 0
         var resultsElement = document.getElementById('score');
         resultsElement.value = 0;
 
+        // disable start-button (must be enabled from the site)
         var startButton = document.getElementById('start-button');
         startButton.disabled = true;
     }
@@ -230,10 +230,10 @@ function displayResults() {
     var output = parseInt(resultsElement.value);
     var selectedLang = document.getElementById('langs').value;
 
-    // 3 еднакви резултата
+    // 3 equal results
     if (results[0] == results[1] == results[2])
     {
-        // избрания език е познат
+        // selected language match
         if(selectedLang == results[0])
         {
             output += 100;
@@ -243,10 +243,10 @@ function displayResults() {
             output += 30;
         }
     }
-        // 2 еднакви резултата
+        // 2 equal results
         else if (results[0] == results[1] || results[0] == results[2])
         {
-            // избрания език е познат
+            // selected language match
             if(selectedLang == results[0])
             {
                 output += 50;
@@ -275,7 +275,7 @@ function displayResults() {
                     else
                     {
                         output = 0;
-                        // ако резултата на играча е 0, не може да играе
+                        // if current score is 0, the player can't play anymore
                         startButton.disabled = true;
                     }
                 }
