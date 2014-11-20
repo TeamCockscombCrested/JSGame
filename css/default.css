@@ -13,9 +13,6 @@ header
 
 body section.slot-section
 {
-	background-image: url("../img/slotBackground.png");
-	background-repeat: repeat;
-	background-size: 50px 50px;
 	padding: 20px 15px 30px 15px;
 }
 
